@@ -1,31 +1,32 @@
-# Modern Creative Portfolio - Kiran Mannepalli
+# React + TypeScript + Vite
 
-A highly interactive, responsive, and aesthetically pleasing personal portfolio showcase. Built with a modern glassmorphism design, smooth animations, and a clean user interface to present professional experience, technical skills, and featured projects.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## 🚀 Key Features
-- **Modern Glassmorphism Design**: Sleek and premium UI using dynamic background blobs and glass-effect containers.
-- **Fully Responsive**: Optimized for all devices, from mobile phones to high-resolution desktops.
-- **Interactive Elements**: Custom animations, hover effects, and a smooth navigation experience.
-- **Project Showcase**: Detailed cards for highlighted works with relevant tech tags.
-- **Contact Integration**: Easy-to-use contact form and social media links.
+Currently, two official plugins are available:
 
-## 🛠️ Tech Stack
-- **Structure**: HTML5 (Semantic)
-- **Styling**: CSS3 (Vanilla, Custom Properties, Flexbox, Grid)
-- **Logic**: Vanilla JavaScript
-- **Icons**: Font Awesome 6.4.2
-- **Typography**: Professional Font Families (Inter, Roboto, or equivalent system fonts)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## 📁 Project Structure
-- `index.html` - The main entry point and structure of the portfolio.
-- `style.css` - Custom styling, layout, and animations.
-- `script.js` - Interactive elements and dynamic behavior.
+## React Compiler
 
-## 👤 About the Developer
-Kiran Mannepalli is a Computer Science Engineer specializing in building scalable web solutions and intelligent systems. With a strong foundation in Python, Java, and Web Technologies, he focuses on creating high-performance digital experiences.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 📝 License
-This project is open-source and available for educational purposes.
+## Expanding the Oxlint configuration
 
----
-*Created with ❤️ by Kiran Mannepalli*
+If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+
+```json
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "options": {
+    "typeAware": true
+  },
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
+```
+
+See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
